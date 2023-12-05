@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:fluttertoast/fluttertoast.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:qtec_video_app/bloc/bloc/videos_bloc_bloc.dart';
 import 'package:qtec_video_app/model/trending_model.dart';
@@ -33,7 +32,7 @@ class _HomeScreenState extends State<HomeScreen> {
     if (_scrollController.position.pixels ==
         _scrollController.position.maxScrollExtent) {
       if (hasPageEnd[0]) {
-        Utils.showToastMessage('you reached page');
+        Utils.showToastMessage('you reached the end of pages');
         return;
       }
       BlocProvider.of<VideosBlocBloc>(context).add(LoadVideosEvent(
@@ -82,19 +81,19 @@ class _HomeScreenState extends State<HomeScreen> {
                     },
                   ),
                 ),
-                //state is VideoLoadingState
-                     Row(
+                state is VideoLoadingState
+                    ? const Row(
                        mainAxisAlignment: MainAxisAlignment.center,
                        children: [
                          Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: const CircularProgressIndicator(
+                          padding: EdgeInsets.all(8.0),
+                          child: CircularProgressIndicator(
                             strokeWidth: 2,
                           ),
                                              ),
                        ],
                      )
-                 //   : Container(),
+                    : Container(),
               ],
             ),
           );
@@ -106,8 +105,8 @@ class _HomeScreenState extends State<HomeScreen> {
 
 Widget videoItemDesign(Result videoModel) {
   return Container(
-    margin: EdgeInsets.symmetric(vertical: 2),
-    decoration: BoxDecoration(
+    margin: const EdgeInsets.symmetric(vertical: 2),
+    decoration: const BoxDecoration(
       color: Colors.white,
     ),
     child: Column(

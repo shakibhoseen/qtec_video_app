@@ -83,6 +83,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
                               ),
                             )
                           : Container(
+                        color: Colors.black38,
                               child: Chewie(controller: _chewieController)),
                     ],
                   )),
@@ -173,7 +174,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
                             Navigator.pushNamed(context, RoutesName.emptyScreen);
                           },
                           style: ElevatedButton.styleFrom(
-                             padding: EdgeInsets.symmetric(horizontal: 14),
+                             padding: const EdgeInsets.symmetric(horizontal: 14),
                               backgroundColor: Colors.blue,
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(6),
@@ -255,7 +256,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Container(
-                          margin: EdgeInsets.all(6),
+                          margin: const EdgeInsets.all(6),
                           clipBehavior: Clip.antiAlias,
                           decoration:
                               const BoxDecoration(shape: BoxShape.circle),

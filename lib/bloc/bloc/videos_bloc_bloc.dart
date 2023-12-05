@@ -1,6 +1,5 @@
 import 'package:bloc/bloc.dart';
-import 'package:meta/meta.dart';
-import 'package:qtec_video_app/model/trending_model.dart';
+import 'package:flutter/material.dart';
 import 'package:qtec_video_app/model/trending_model.dart';
 import 'package:qtec_video_app/repository/trending_repogitory.dart';
 
