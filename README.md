@@ -44,6 +44,6 @@ This Flutter application demonstrates fetching videos using BLOC pattern with pa
   <img alt="loading Page" src="https://github.com/shakibhoseen/qtec_video_app/assets/61150626/47d5d049-22a3-488a-8707-bbf9c7f85483" width="260">
    <img alt="thumbnail before video start" src="https://github.com/shakibhoseen/qtec_video_app/assets/61150626/89b6fff5-ec04-4f6b-8e00-2257c227ba5f" width="260">
   <img alt="video playing" src="https://github.com/shakibhoseen/qtec_video_app/assets/61150626/bc09df44-3c54-4875-85d3-741675869c48" width="260">
-  
+  <img alt="video playing" src="https://github.com/shakibhoseen/qtec_video_app/assets/61150626/339d1c8a-fa22-4edc-9603-ccccb8a224d1" width="260">
 </div>
 </kbd>
