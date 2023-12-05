@@ -13,8 +13,7 @@ class MyAppView extends StatelessWidget {
      MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        canvasColor: const Color(0xffe4e9ec),
         useMaterial3: true,
         fontFamily: GoogleFonts.inter().fontFamily,
       ),

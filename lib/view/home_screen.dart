@@ -19,7 +19,7 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   final ScrollController _scrollController = ScrollController();
   final List<Result> allVideoInfo = [];
-  bool hasPageEnd = false;
+  final  hasPageEnd = [false];
 
   @override
   void initState() {
@@ -32,7 +32,7 @@ class _HomeScreenState extends State<HomeScreen> {
   void _onScroll() {
     if (_scrollController.position.pixels ==
         _scrollController.position.maxScrollExtent) {
-      if (hasPageEnd) {
+      if (hasPageEnd[0]) {
         Utils.showToastMessage('you reached page');
         return;
       }
@@ -48,7 +48,7 @@ class _HomeScreenState extends State<HomeScreen> {
         builder: (context, state) {
           if (state is VideoCompleteState) {
             if (state.trendingModel.links.next == null) {
-              hasPageEnd = true;
+              hasPageEnd[0] = true;
             }
 
             allVideoInfo.addAll(state.videosInfo);
@@ -82,9 +82,19 @@ class _HomeScreenState extends State<HomeScreen> {
                     },
                   ),
                 ),
-                state is VideoLoadingState
-                    ? const CircularProgressIndicator()
-                    : Container(),
+                //state is VideoLoadingState
+                     Row(
+                       mainAxisAlignment: MainAxisAlignment.center,
+                       children: [
+                         Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: const CircularProgressIndicator(
+                            strokeWidth: 2,
+                          ),
+                                             ),
+                       ],
+                     )
+                 //   : Container(),
               ],
             ),
           );
@@ -96,7 +106,10 @@ class _HomeScreenState extends State<HomeScreen> {
 
 Widget videoItemDesign(Result videoModel) {
   return Container(
-    color: Colors.white,
+    margin: EdgeInsets.symmetric(vertical: 2),
+    decoration: BoxDecoration(
+      color: Colors.white,
+    ),
     child: Column(
       children: [
         Stack(

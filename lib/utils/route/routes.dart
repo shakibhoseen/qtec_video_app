@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:qtec_video_app/model/trending_model.dart';
 import 'package:qtec_video_app/utils/route/routes_name.dart';
 import 'package:qtec_video_app/view/details_screen.dart';
+import 'package:qtec_video_app/view/empty_screen.dart';
 import 'package:qtec_video_app/view/home_screen.dart';
 
 
@@ -15,7 +16,8 @@ class Routes {
         return MaterialPageRoute(
           builder: (context) =>   DetailsScreen(model: model),
         );
-      
+      case RoutesName.emptyScreen:
+        return MaterialPageRoute(builder: (context) => const EmptyScreen());
       default:
         return MaterialPageRoute(builder: (context) {
           return const Scaffold(
